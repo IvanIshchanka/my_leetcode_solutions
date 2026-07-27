@@ -1,0 +1,19 @@
+[project]
+name = "my-leetcode-solutions"
+version = "0.1.0"
+description = "Practice solutions for LeetCode problems while learning data structures and algorithms"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["problems"]
+# Solution files are named `<number>-<slug>.py`, so tests do not live in `test_*.py`
+# and the filenames are not importable module names. Both need overriding.
+python_files = ["*.py"]
+addopts = "--import-mode=importlib"
