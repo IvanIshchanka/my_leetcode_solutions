@@ -72,7 +72,17 @@ Rules:
      you the pattern name."*
    - Suggest a `-n` note capturing the one thing that cost them time. This is the
      most useful field in the whole tracker — never leave it empty.
-4. Ask whether they want another problem or are done for the day.
+4. **Commit and push the tracker state**, so the phone and the laptop agree:
+   ```bash
+   git add progress.json PROGRESS.md && \
+     git commit -m "chore(progress): log <n> as <outcome>" && \
+     git push origin main
+   ```
+   This is a standing authorization and covers **only** `progress.json` and
+   `PROGRESS.md`. Solution files are their work — ask before committing those.
+   If the push fails (no network, conflict), say so and move on; the local log
+   is already saved and can be pushed later.
+5. Ask whether they want another problem or are done for the day.
 
 ### 4. "How am I doing?"
 
@@ -89,6 +99,18 @@ Run `uv run track.py stats`. Interpret rather than recite:
   when they're near the end of a phase.
 
 Be straight with them. If the numbers are bad, say so and name the fix.
+
+## Running in a cloud session (phone / claude.ai/code)
+
+Cloud sessions clone the repo fresh and have no local state, so:
+
+- **`track.py` is stdlib-only.** If `uv` isn't available, `python3 track.py today`
+  works identically. Don't waste turns installing things to run the tracker.
+- **Commit and push to `main` directly** for tracker updates. Do not open a branch
+  or a PR for a logged attempt — the log is the point, not the diff.
+- The state you see is whatever was last pushed. If `progress.json` is missing
+  from the clone, say so plainly rather than reporting an empty tracker as if it
+  were real progress.
 
 ## Command reference
 
