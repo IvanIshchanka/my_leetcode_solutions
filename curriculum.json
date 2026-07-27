@@ -1,0 +1,239 @@
+{
+  "plan": "12-week DSA foundation, 10-12 h/week",
+  "intervals_days": [1, 3, 7, 16, 35, 90],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "1 - Linear foundations",
+      "topic": "Complexity + Arrays & Hashing",
+      "learn": [
+        "Big-O: how to count loops, why O(n log n) beats O(n^2), amortized cost",
+        "Python fluency: list vs dict vs set vs tuple, and the cost of every operation you use",
+        "The core trick: trade space for time by remembering what you have already seen"
+      ],
+      "problems": [
+        {"number": 1, "slug": "two-sum", "title": "Two Sum", "difficulty": "Easy", "pattern": "hash-map"},
+        {"number": 217, "slug": "contains-duplicate", "title": "Contains Duplicate", "difficulty": "Easy", "pattern": "hash-set"},
+        {"number": 242, "slug": "valid-anagram", "title": "Valid Anagram", "difficulty": "Easy", "pattern": "counting"},
+        {"number": 49, "slug": "group-anagrams", "title": "Group Anagrams", "difficulty": "Medium", "pattern": "hash-map"},
+        {"number": 238, "slug": "product-of-array-except-self", "title": "Product of Array Except Self", "difficulty": "Medium", "pattern": "prefix-suffix"},
+        {"number": 347, "slug": "top-k-frequent-elements", "title": "Top K Frequent Elements", "difficulty": "Medium", "pattern": "counting"}
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "1 - Linear foundations",
+      "topic": "Two Pointers",
+      "learn": [
+        "Opposite-ends pointers vs same-direction (fast/slow) pointers",
+        "Why sortedness is what makes the opposite-ends move provably safe",
+        "In-place array rewriting with a write pointer"
+      ],
+      "problems": [
+        {"number": 125, "slug": "valid-palindrome", "title": "Valid Palindrome", "difficulty": "Easy", "pattern": "two-pointers"},
+        {"number": 344, "slug": "reverse-string", "title": "Reverse String", "difficulty": "Easy", "pattern": "two-pointers"},
+        {"number": 26, "slug": "remove-duplicates-from-sorted-array", "title": "Remove Duplicates from Sorted Array", "difficulty": "Easy", "pattern": "two-pointers"},
+        {"number": 88, "slug": "merge-sorted-array", "title": "Merge Sorted Array", "difficulty": "Easy", "pattern": "two-pointers"},
+        {"number": 167, "slug": "two-sum-ii-input-array-is-sorted", "title": "Two Sum II", "difficulty": "Medium", "pattern": "two-pointers"},
+        {"number": 11, "slug": "container-with-most-water", "title": "Container With Most Water", "difficulty": "Medium", "pattern": "two-pointers"},
+        {"number": 15, "slug": "3sum", "title": "3Sum", "difficulty": "Medium", "pattern": "two-pointers"}
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "1 - Linear foundations",
+      "topic": "Sliding Window",
+      "learn": [
+        "Fixed-size window vs variable-size window",
+        "The expand/contract loop skeleton - write it once, reuse it everywhere",
+        "Maintaining a window summary (count map, sum, max) in O(1) per move"
+      ],
+      "problems": [
+        {"number": 121, "slug": "best-time-to-buy-and-sell-stock", "title": "Best Time to Buy and Sell Stock", "difficulty": "Easy", "pattern": "sliding-window"},
+        {"number": 643, "slug": "maximum-average-subarray-i", "title": "Maximum Average Subarray I", "difficulty": "Easy", "pattern": "sliding-window"},
+        {"number": 3, "slug": "longest-substring-without-repeating-characters", "title": "Longest Substring Without Repeating Characters", "difficulty": "Medium", "pattern": "sliding-window"},
+        {"number": 209, "slug": "minimum-size-subarray-sum", "title": "Minimum Size Subarray Sum", "difficulty": "Medium", "pattern": "sliding-window"},
+        {"number": 424, "slug": "longest-repeating-character-replacement", "title": "Longest Repeating Character Replacement", "difficulty": "Medium", "pattern": "sliding-window"},
+        {"number": 567, "slug": "permutation-in-string", "title": "Permutation in String", "difficulty": "Medium", "pattern": "sliding-window"}
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "1 - Linear foundations",
+      "topic": "Stack & Queue",
+      "learn": [
+        "Stack as 'remember until the matching thing arrives'",
+        "The monotonic stack skeleton and what problem shape it solves",
+        "collections.deque, and why list.pop(0) is a trap"
+      ],
+      "problems": [
+        {"number": 20, "slug": "valid-parentheses", "title": "Valid Parentheses", "difficulty": "Easy", "pattern": "stack"},
+        {"number": 232, "slug": "implement-queue-using-stacks", "title": "Implement Queue using Stacks", "difficulty": "Easy", "pattern": "stack"},
+        {"number": 496, "slug": "next-greater-element-i", "title": "Next Greater Element I", "difficulty": "Easy", "pattern": "monotonic-stack"},
+        {"number": 155, "slug": "min-stack", "title": "Min Stack", "difficulty": "Medium", "pattern": "stack-design"},
+        {"number": 150, "slug": "evaluate-reverse-polish-notation", "title": "Evaluate Reverse Polish Notation", "difficulty": "Medium", "pattern": "stack"},
+        {"number": 739, "slug": "daily-temperatures", "title": "Daily Temperatures", "difficulty": "Medium", "pattern": "monotonic-stack"},
+        {"number": 22, "slug": "generate-parentheses", "title": "Generate Parentheses", "difficulty": "Medium", "pattern": "backtracking"}
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "1 - Linear foundations",
+      "topic": "Binary Search",
+      "learn": [
+        "Pick ONE template (left <= right, or lo < hi) and never write another one",
+        "Off-by-one discipline: what invariant holds at every iteration",
+        "Binary search on the ANSWER, not on the array - the real interview version"
+      ],
+      "problems": [
+        {"number": 704, "slug": "binary-search", "title": "Binary Search", "difficulty": "Easy", "pattern": "binary-search"},
+        {"number": 35, "slug": "search-insert-position", "title": "Search Insert Position", "difficulty": "Easy", "pattern": "binary-search"},
+        {"number": 278, "slug": "first-bad-version", "title": "First Bad Version", "difficulty": "Easy", "pattern": "binary-search"},
+        {"number": 74, "slug": "search-a-2d-matrix", "title": "Search a 2D Matrix", "difficulty": "Medium", "pattern": "binary-search"},
+        {"number": 153, "slug": "find-minimum-in-rotated-sorted-array", "title": "Find Minimum in Rotated Sorted Array", "difficulty": "Medium", "pattern": "binary-search"},
+        {"number": 33, "slug": "search-in-rotated-sorted-array", "title": "Search in Rotated Sorted Array", "difficulty": "Medium", "pattern": "binary-search"},
+        {"number": 875, "slug": "koko-eating-bananas", "title": "Koko Eating Bananas", "difficulty": "Medium", "pattern": "binary-search-on-answer"}
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "2 - Recursive & hierarchical",
+      "topic": "Linked List",
+      "learn": [
+        "Pointer surgery: draw the boxes and arrows on paper before typing",
+        "The dummy-head trick, and why it removes half your edge cases",
+        "Fast/slow pointers: cycle detection, middle node, nth-from-end"
+      ],
+      "problems": [
+        {"number": 206, "slug": "reverse-linked-list", "title": "Reverse Linked List", "difficulty": "Easy", "pattern": "linked-list"},
+        {"number": 21, "slug": "merge-two-sorted-lists", "title": "Merge Two Sorted Lists", "difficulty": "Easy", "pattern": "linked-list"},
+        {"number": 141, "slug": "linked-list-cycle", "title": "Linked List Cycle", "difficulty": "Easy", "pattern": "fast-slow-pointers"},
+        {"number": 876, "slug": "middle-of-the-linked-list", "title": "Middle of the Linked List", "difficulty": "Easy", "pattern": "fast-slow-pointers"},
+        {"number": 19, "slug": "remove-nth-node-from-end-of-list", "title": "Remove Nth Node From End of List", "difficulty": "Medium", "pattern": "fast-slow-pointers"},
+        {"number": 143, "slug": "reorder-list", "title": "Reorder List", "difficulty": "Medium", "pattern": "linked-list"},
+        {"number": 2, "slug": "add-two-numbers", "title": "Add Two Numbers", "difficulty": "Medium", "pattern": "linked-list"}
+      ]
+    },
+    {
+      "week": 7,
+      "phase": "2 - Recursive & hierarchical",
+      "topic": "Trees & BST",
+      "learn": [
+        "Recursion as a contract: assume the recursive call is correct, then combine",
+        "DFS orders (pre/in/post) and what each one is FOR",
+        "BFS with a queue when the answer depends on depth/level",
+        "The BST invariant, and why in-order traversal of a BST is sorted"
+      ],
+      "problems": [
+        {"number": 226, "slug": "invert-binary-tree", "title": "Invert Binary Tree", "difficulty": "Easy", "pattern": "tree-dfs"},
+        {"number": 104, "slug": "maximum-depth-of-binary-tree", "title": "Maximum Depth of Binary Tree", "difficulty": "Easy", "pattern": "tree-dfs"},
+        {"number": 100, "slug": "same-tree", "title": "Same Tree", "difficulty": "Easy", "pattern": "tree-dfs"},
+        {"number": 543, "slug": "diameter-of-binary-tree", "title": "Diameter of Binary Tree", "difficulty": "Easy", "pattern": "tree-dfs"},
+        {"number": 110, "slug": "balanced-binary-tree", "title": "Balanced Binary Tree", "difficulty": "Easy", "pattern": "tree-dfs"},
+        {"number": 102, "slug": "binary-tree-level-order-traversal", "title": "Binary Tree Level Order Traversal", "difficulty": "Medium", "pattern": "tree-bfs"},
+        {"number": 235, "slug": "lowest-common-ancestor-of-a-binary-search-tree", "title": "Lowest Common Ancestor of a BST", "difficulty": "Medium", "pattern": "bst"},
+        {"number": 98, "slug": "validate-binary-search-tree", "title": "Validate Binary Search Tree", "difficulty": "Medium", "pattern": "bst"},
+        {"number": 230, "slug": "kth-smallest-element-in-a-bst", "title": "Kth Smallest Element in a BST", "difficulty": "Medium", "pattern": "bst"}
+      ]
+    },
+    {
+      "week": 8,
+      "phase": "2 - Recursive & hierarchical",
+      "topic": "Heaps & Backtracking",
+      "learn": [
+        "heapq: min-heap only, and the negate-to-get-max-heap trick",
+        "'top k' => heap of size k, O(n log k)",
+        "Backtracking skeleton: choose / explore / un-choose",
+        "Drawing the decision tree before writing the recursion"
+      ],
+      "problems": [
+        {"number": 703, "slug": "kth-largest-element-in-a-stream", "title": "Kth Largest Element in a Stream", "difficulty": "Easy", "pattern": "heap"},
+        {"number": 1046, "slug": "last-stone-weight", "title": "Last Stone Weight", "difficulty": "Easy", "pattern": "heap"},
+        {"number": 215, "slug": "kth-largest-element-in-an-array", "title": "Kth Largest Element in an Array", "difficulty": "Medium", "pattern": "heap"},
+        {"number": 973, "slug": "k-closest-points-to-origin", "title": "K Closest Points to Origin", "difficulty": "Medium", "pattern": "heap"},
+        {"number": 78, "slug": "subsets", "title": "Subsets", "difficulty": "Medium", "pattern": "backtracking"},
+        {"number": 39, "slug": "combination-sum", "title": "Combination Sum", "difficulty": "Medium", "pattern": "backtracking"},
+        {"number": 46, "slug": "permutations", "title": "Permutations", "difficulty": "Medium", "pattern": "backtracking"},
+        {"number": 79, "slug": "word-search", "title": "Word Search", "difficulty": "Medium", "pattern": "backtracking"}
+      ]
+    },
+    {
+      "week": 9,
+      "phase": "2 - Recursive & hierarchical",
+      "topic": "Graphs",
+      "learn": [
+        "Representations: adjacency list, and the grid-as-implicit-graph idea",
+        "BFS = shortest path in unweighted graphs; DFS = reachability/components",
+        "The visited set is not optional - know exactly when you mark",
+        "Topological sort and cycle detection on a DAG"
+      ],
+      "problems": [
+        {"number": 200, "slug": "number-of-islands", "title": "Number of Islands", "difficulty": "Medium", "pattern": "graph-dfs"},
+        {"number": 695, "slug": "max-area-of-island", "title": "Max Area of Island", "difficulty": "Medium", "pattern": "graph-dfs"},
+        {"number": 133, "slug": "clone-graph", "title": "Clone Graph", "difficulty": "Medium", "pattern": "graph-dfs"},
+        {"number": 994, "slug": "rotting-oranges", "title": "Rotting Oranges", "difficulty": "Medium", "pattern": "graph-bfs"},
+        {"number": 130, "slug": "surrounded-regions", "title": "Surrounded Regions", "difficulty": "Medium", "pattern": "graph-dfs"},
+        {"number": 417, "slug": "pacific-atlantic-water-flow", "title": "Pacific Atlantic Water Flow", "difficulty": "Medium", "pattern": "graph-dfs"},
+        {"number": 207, "slug": "course-schedule", "title": "Course Schedule", "difficulty": "Medium", "pattern": "topological-sort"},
+        {"number": 210, "slug": "course-schedule-ii", "title": "Course Schedule II", "difficulty": "Medium", "pattern": "topological-sort"}
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "3 - Optimization",
+      "topic": "1-D Dynamic Programming",
+      "learn": [
+        "Recursion + memo first, bottom-up table second - always in that order",
+        "Naming the state: 'dp[i] = the best answer for the first i items'",
+        "Recurrence, base case, answer location - the three things to write down",
+        "Space optimization: when you only need the last one or two rows"
+      ],
+      "problems": [
+        {"number": 70, "slug": "climbing-stairs", "title": "Climbing Stairs", "difficulty": "Easy", "pattern": "dp-1d"},
+        {"number": 746, "slug": "min-cost-climbing-stairs", "title": "Min Cost Climbing Stairs", "difficulty": "Easy", "pattern": "dp-1d"},
+        {"number": 198, "slug": "house-robber", "title": "House Robber", "difficulty": "Medium", "pattern": "dp-1d"},
+        {"number": 213, "slug": "house-robber-ii", "title": "House Robber II", "difficulty": "Medium", "pattern": "dp-1d"},
+        {"number": 5, "slug": "longest-palindromic-substring", "title": "Longest Palindromic Substring", "difficulty": "Medium", "pattern": "dp-1d"},
+        {"number": 322, "slug": "coin-change", "title": "Coin Change", "difficulty": "Medium", "pattern": "dp-unbounded-knapsack"},
+        {"number": 300, "slug": "longest-increasing-subsequence", "title": "Longest Increasing Subsequence", "difficulty": "Medium", "pattern": "dp-1d"},
+        {"number": 139, "slug": "word-break", "title": "Word Break", "difficulty": "Medium", "pattern": "dp-1d"}
+      ]
+    },
+    {
+      "week": 11,
+      "phase": "3 - Optimization",
+      "topic": "Greedy, Intervals & 2-D DP",
+      "learn": [
+        "Greedy vs DP: what makes a local choice provably safe",
+        "Intervals: sort by start or by end, and why the choice matters",
+        "2-D DP: grid state, and reading the recurrence off the picture"
+      ],
+      "problems": [
+        {"number": 53, "slug": "maximum-subarray", "title": "Maximum Subarray", "difficulty": "Medium", "pattern": "greedy"},
+        {"number": 55, "slug": "jump-game", "title": "Jump Game", "difficulty": "Medium", "pattern": "greedy"},
+        {"number": 45, "slug": "jump-game-ii", "title": "Jump Game II", "difficulty": "Medium", "pattern": "greedy"},
+        {"number": 57, "slug": "insert-interval", "title": "Insert Interval", "difficulty": "Medium", "pattern": "intervals"},
+        {"number": 56, "slug": "merge-intervals", "title": "Merge Intervals", "difficulty": "Medium", "pattern": "intervals"},
+        {"number": 435, "slug": "non-overlapping-intervals", "title": "Non-overlapping Intervals", "difficulty": "Medium", "pattern": "intervals"},
+        {"number": 62, "slug": "unique-paths", "title": "Unique Paths", "difficulty": "Medium", "pattern": "dp-2d"},
+        {"number": 1143, "slug": "longest-common-subsequence", "title": "Longest Common Subsequence", "difficulty": "Medium", "pattern": "dp-2d"}
+      ]
+    },
+    {
+      "week": 12,
+      "phase": "3 - Optimization",
+      "topic": "Consolidation, mocks & weak spots",
+      "learn": [
+        "No new patterns. Clear the review queue and re-solve every problem you needed help on",
+        "Two timed mock sessions: 2 random problems in 45 min, talking out loud",
+        "List every pattern with its trigger from memory - that is your exam"
+      ],
+      "problems": [
+        {"number": 136, "slug": "single-number", "title": "Single Number", "difficulty": "Easy", "pattern": "bit-manipulation"},
+        {"number": 191, "slug": "number-of-1-bits", "title": "Number of 1 Bits", "difficulty": "Easy", "pattern": "bit-manipulation"},
+        {"number": 338, "slug": "counting-bits", "title": "Counting Bits", "difficulty": "Easy", "pattern": "bit-manipulation"},
+        {"number": 268, "slug": "missing-number", "title": "Missing Number", "difficulty": "Easy", "pattern": "bit-manipulation"}
+      ]
+    }
+  ]
+}
