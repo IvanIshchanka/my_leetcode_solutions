@@ -5,36 +5,57 @@ https://leetcode.com/problems/two-sum/
 Pattern: hash-map
 
 --- Problem statement ---
-TODO: paste the statement here (trim the fluff, keep the constraints).
+Дан массив целых чисел nums и целое target. Вернуть индексы двух чисел,
+дающих в сумме target.
+
+Ровно одно решение существует; один и тот же элемент дважды использовать
+нельзя. Порядок индексов в ответе не важен.
+
+Constraints: 2 <= len(nums) <= 10^4, -10^9 <= nums[i], target <= 10^9.
 
 --- Approach ---
-TODO: write this BEFORE you write any code.
-  1. What is the brute force, and what does it cost?
-  2. What does the optimal approach do differently, in one sentence?
-  3. What is the invariant that makes it correct?
+  1. Брутфорс: два вложенных цикла по всем парам — O(n^2).
+  2. Один проход: для каждого числа искать не пару, а его дополнение
+     target - number среди уже увиденных чисел.
+  3. Инвариант: в словаре лежат только элементы слева от текущего i,
+     поэтому найденная пара всегда состоит из двух разных индексов.
 
-Complexity: time O(?), space O(?)
+Complexity: time O(n), space O(n)
 
 --- Trigger ---
-TODO (fill in AFTER solving): what in the problem statement should have
-made you think "hash-map" within 90 seconds?
+найти элементы дающие в сумме х -> наталкивает на мапу или сет
 """
 
-import pytest
 
-# Delete this line once you start implementing, to switch the tests on.
-pytestmark = pytest.mark.skip(reason="not implemented yet")
+def two_sum(nums: list[int], target: int) -> list[int]:
+    existing_numbers_dict = dict()
+    for i, number in enumerate(nums):
+        substraction = target - number
+        if substraction in existing_numbers_dict:
+            return [existing_numbers_dict[substraction], i]
+        else:
+            existing_numbers_dict[number] = i
 
 
-def two_sum():
-    """TODO: fix the signature and implement."""
-    raise NotImplementedError
+# TODO с ревью:
+#   - переименовать substraction -> complement (и опечатка, и смысл)
+#   - else лишний: после return управление до него не доходит
+#   - добавить явный return [] в конце вместо неявного None
+#   - уметь объяснить, почему перезапись индекса при дубликате безопасна
 
 
 def test_example_1():
-    assert two_sum() is None
+    assert two_sum([2, 7, 11, 15], 9) == [0, 1]
+
+
+def test_pair_not_adjacent():
+    assert two_sum([3, 2, 4], 6) == [1, 2]
 
 
 def test_edge_case():
-    """The empty / single-element / all-equal case. Pick the one that bites."""
-    assert two_sum() is None
+    """Дубликаты: оба слагаемых — одно и то же значение."""
+    assert two_sum([3, 3], 6) == [0, 1]
+
+
+def test_negatives():
+    assert two_sum([-3, 4, 3, 90], 0) == [0, 2]
