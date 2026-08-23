@@ -27,8 +27,8 @@ Complexity: time O(n * k), space O(n * k)  (n строк, k — длина ст�
 26 на строку — константа)
 
 --- Trigger ---
-TODO (fill in AFTER solving): what in the problem statement should have
-made you think "hash-map" within 90 seconds?
+надо находить анаграммы и ГРУППИРОВАТЬ их.
+главная проблема - определить как ключ сделать корректно
 """
 
 
