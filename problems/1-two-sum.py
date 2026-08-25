@@ -17,8 +17,12 @@ Constraints: 2 <= len(nums) <= 10^4, -10^9 <= nums[i], target <= 10^9.
   1. Брутфорс: два вложенных цикла по всем парам — O(n^2).
   2. Один проход: для каждого числа искать не пару, а его дополнение
      target - number среди уже увиденных чисел.
-  3. Инвариант: в словаре лежат только элементы слева от текущего i,
-     поэтому найденная пара всегда состоит из двух разных индексов.
+  3. Инвариант: вставка идёт ПОСЛЕ проверки, поэтому в словаре лежат только
+     элементы строго слева от текущего i — один и тот же элемент не может
+     сыграть за обе половины пары. Если значение повторяется и индекс
+     затирается, это безопасно: пара (i, j), i < j, находится на шаге j,
+     когда какой-то индекс нужного значения уже лежит в словаре, а какой
+     именно — неважно, значения равны, любой из них верный ответ.
 
 Complexity: time O(n), space O(n)
 
@@ -28,20 +32,17 @@ Complexity: time O(n), space O(n)
 
 
 def two_sum(nums: list[int], target: int) -> list[int]:
-    existing_numbers_dict = dict()
-    for i, number in enumerate(nums):
-        substraction = target - number
-        if substraction in existing_numbers_dict:
-            return [existing_numbers_dict[substraction], i]
-        else:
-            existing_numbers_dict[number] = i
+    seen = dict()
+    for i, num in enumerate(nums):
+        dif = target - num
+        if dif in seen:
+            return [seen[dif], i]
+        seen[num] = i
 
 
-# TODO с ревью:
-#   - переименовать substraction -> complement (и опечатка, и смысл)
-#   - else лишний: после return управление до него не доходит
+# TODO с ревью (повтор 2026-08-25 — лишний else и опечатка исправлены):
 #   - добавить явный return [] в конце вместо неявного None
-#   - уметь объяснить, почему перезапись индекса при дубликате безопасна
+#   - dif -> complement: это не разность, а дополнение до target
 
 
 def test_example_1():
