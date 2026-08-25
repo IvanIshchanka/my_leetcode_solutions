@@ -33,30 +33,31 @@ Complexity: time O(n * k), space O(n * k)  (n строк, k — длина ст�
 
 
 def group_anagrams(strs: list[str]) -> list[list[str]]:
-    first_letter = 97
+    start = ord("a")
 
     def to_alphabet_tuple(string):
-        alphabet_list = [0 for i in range(26)]
+        alphabet_list = [0] * 26
         for letter in string:
-            alphabet_list[ord(letter) - first_letter] += 1
+            alphabet_list[ord(letter) - start] += 1
         return tuple(alphabet_list)
 
-    dict_of_groups = dict()
+    dict_with_alphabet_tuples_as_keys = dict()
+
     for string in strs:
-        alphabet_tuple = to_alphabet_tuple(string)
-        if alphabet_tuple in dict_of_groups:
-            dict_of_groups[alphabet_tuple].append(string)
+        a_tuple = to_alphabet_tuple(string)
+        if a_tuple in dict_with_alphabet_tuples_as_keys:
+            dict_with_alphabet_tuples_as_keys[a_tuple].append(string)
         else:
-            dict_of_groups[alphabet_tuple] = [string]
-    return list(dict_of_groups.values())
+            dict_with_alphabet_tuples_as_keys[a_tuple] = [string]
+
+    return list(dict_with_alphabet_tuples_as_keys.values())
 
 
-# TODO с ревью:
-#   - first_letter = 97 -> ord("a"): магическое число ничего не объясняет
-#   - [0 for i in range(26)] -> [0] * 26 (i не используется)
-#   - if/else вокруг словаря убирается целиком:
-#     dict_of_groups.setdefault(key, []).append(string)
-#     или defaultdict(list) — это тот же лишний else, что был в 1 и 217
+# TODO с ревью (повтор 2026-08-26 — ord("a") вместо 97 и [0] * 26 на месте):
+#   - if/else вокруг словаря всё ещё здесь, четвёртый раз подряд:
+#     groups.setdefault(key, []).append(string)  или  defaultdict(list)
+#   - dict_with_alphabet_tuples_as_keys -> groups: имя описывает устройство,
+#     а не смысл; как называется ключ, и так видно строкой выше
 #   - знать альтернативный ключ: tuple(sorted(string)) — короче, но
 #     O(k log k) на строку вместо O(k)
 
