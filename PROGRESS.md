@@ -8,10 +8,10 @@
 ```
 Problems attempted : 5/85
 Mastered           : 0
-Total attempts     : 8  (2.6 h)
+Total attempts     : 9  (2.7 h)
 Cold-solve rate    : 60%  (solved unaided on first sight)
 Day streak         : 4
-Due today          : 2
+Due today          : 1
 
 Weakest patterns (by first-attempt outcome):
   prefix-suffix              0/1 cold  (hint 0, read 1)
@@ -22,7 +22,6 @@ Weakest patterns (by first-attempt outcome):
 
 Re-solve from a blank file. Do not re-read your old solution.
 
-- [ ] 242. Valid Anagram  `counting`
 - [ ] 49. Group Anagrams  `hash-map`
 
 ## Curriculum
@@ -35,7 +34,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 |---|---|---|---|---|---|---|
 | (~) | 1 | Two Sum | Easy | `hash-map` | SS | 2026-08-28 |
 | (~) | 217 | Contains Duplicate | Easy | `hash-set` | SS | 2026-08-28 |
-| (~) | 242 | Valid Anagram | Easy | `counting` | S | 2026-08-23 |
+| (~) | 242 | Valid Anagram | Easy | `counting` | SS | 2026-08-28 |
 | (~) | 49 | Group Anagrams | Medium | `hash-map` | H | 2026-08-24 |
 | (~) | 238 | Product of Array Except Self | Medium | `prefix-suffix` | RR | 2026-08-26 |
 | ( ) | 347 | Top K Frequent Elements | Medium | `counting` | - | - |
@@ -178,6 +177,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 
 | Date | Problem | Outcome | Min | Notes |
 |---|---|---|---|---|
+| 2026-08-25 | Valid Anagram | solved | 5 | повтор с чистого листа: сравнение словарей целиком вместо ручного обхода, вдвое быстрее (10->5 мин); if/else в счётчике вернулся |
 | 2026-08-25 | Two Sum | solved | 4 | повтор с чистого листа: else убран, имена чище (seen/dif); явный return [] так и не добавлен |
 | 2026-08-25 | Product of Array Except Self | read | 50 | префикс/суффикс: два прохода, running до и после записи. Подход дал я целиком — на повторе проверить, осталось ли понимание |
 | 2026-08-25 | Contains Duplicate | solved | 1 | повтор с чистого листа: else убран, ранний выход на месте; чисто с первого раза |

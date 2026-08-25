@@ -12,10 +12,12 @@ Constraints: 1 <= len(s), len(t) <= 5 * 10^4, только строчные ла
 
 --- Approach ---
   1. Брутфорс: отсортировать обе строки и сравнить — O(n log n).
-  2. Считать частоты символов в каждой строке и сравнить два счётчика:
+  2. Посчитать частоты символов в каждой строке и сравнить счётчики целиком:
      порядок не важен, важны только кратности.
-  3. Инвариант: если каждая буква s встречается в t столько же раз И длины
-     совпадают, то у t не может остаться «лишних» букв, которых нет в s.
+  3. Инвариант: равенство словарей — это равенство и множеств ключей, и
+     значений сразу. Поэтому лишние буквы в t ловятся тем же сравнением,
+     что и разные кратности, и отдельная проверка длин не нужна для
+     корректности (в первой версии она была обязательной).
 
 Complexity: time O(n + m), space O(k) — k различных символов; для a-z это O(1)
 
@@ -26,7 +28,7 @@ Complexity: time O(n + m), space O(k) — k различных символов;
 
 
 def is_anagram(s: str, t: str) -> bool:
-    def counter(string):
+    def to_counter(string):
         result = dict()
         for letter in string:
             if letter in result:
@@ -35,20 +37,16 @@ def is_anagram(s: str, t: str) -> bool:
                 result[letter] = 1
         return result
 
-    s_counter = counter(s)
-    t_counter = counter(t)
-    for letter, count in s_counter.items():
-        if not t_counter.get(letter) or t_counter[letter] != count:
-            return False
-    return len(s) == len(t)
+    t_counter = to_counter(t)
+    s_counter = to_counter(s)
+    return s_counter == t_counter
 
 
-# TODO с ревью:
-#   - проверку len(s) != len(t) вынести в начало: она и делает алгоритм
-#     корректным, и даёт O(1) отсечку до всей работы
-#   - вместо "not get(...) or ... != count" писать get(letter, 0) != count
-#     ("not x" смешивает «ключа нет» и «значение 0»)
-#   - counter короче: result[letter] = result.get(letter, 0) + 1
+# TODO с ревью (повтор 2026-08-25 — сравнение словарей целиком вместо
+# ручного обхода с финальной проверкой длин, это чище и короче):
+#   - if/else в to_counter вернулся: result[letter] = result.get(letter, 0) + 1
+#   - можно добавить в начало if len(s) != len(t): return False — для
+#     корректности уже не нужно, но это O(1) отсечка до всей работы
 #   - знать однострочник: Counter(s) == Counter(t)
 
 
@@ -61,11 +59,15 @@ def test_not_an_anagram():
 
 
 def test_edge_case():
-    """Разная длина при совпадающем наборе букв — тот случай, где падает
-    решение без финальной проверки len(s) == len(t)."""
+    """Один набор букв, но разная длина — лишний ключ или другая кратность
+    ловится тем же сравнением словарей."""
     assert is_anagram("ab", "aab") is False
     assert is_anagram("aab", "ab") is False
 
 
 def test_same_letters_different_counts():
     assert is_anagram("aacc", "ccac") is False
+
+
+def test_identical_strings():
+    assert is_anagram("abc", "abc") is True
