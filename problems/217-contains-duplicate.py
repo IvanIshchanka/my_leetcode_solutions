@@ -30,15 +30,13 @@ def contains_duplicate(nums: list[int]) -> bool:
     for num in nums:
         if num in seen:
             return True
-        else:
-            seen.add(num)
+        seen.add(num)
     return False
 
 
-# TODO с ревью:
-#   - else снова лишний
-#   - знать однострочник: return len(set(nums)) != len(nums)
-#     и его минус — нет раннего выхода, всегда строит множество целиком
+# Заметка (повтор 2026-08-25 — лишний else убран, замечаний по коду не осталось):
+#   - альтернатива в одну строку: return len(set(nums)) != len(nums)
+#     её минус — нет раннего выхода, множество строится целиком всегда
 
 
 def test_example_1():
