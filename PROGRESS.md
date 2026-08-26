@@ -8,21 +8,15 @@
 ```
 Problems attempted : 5/85
 Mastered           : 0
-Total attempts     : 10  (3.0 h)
+Total attempts     : 11  (3.2 h)
 Cold-solve rate    : 60%  (solved unaided on first sight)
 Day streak         : 5
-Due today          : 1
+Due today          : 0
 
 Weakest patterns (by first-attempt outcome):
   prefix-suffix              0/1 cold  (hint 0, read 1)
   hash-map                   1/2 cold  (hint 1, read 0)
 ```
-
-## Due for review
-
-Re-solve from a blank file. Do not re-read your old solution.
-
-- [ ] 238. Product of Array Except Self  `prefix-suffix`
 
 ## Curriculum
 
@@ -36,7 +30,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 | (~) | 217 | Contains Duplicate | Easy | `hash-set` | SS | 2026-08-28 |
 | (~) | 242 | Valid Anagram | Easy | `counting` | SS | 2026-08-28 |
 | (~) | 49 | Group Anagrams | Medium | `hash-map` | HS | 2026-08-27 |
-| (~) | 238 | Product of Array Except Self | Medium | `prefix-suffix` | RR | 2026-08-26 |
+| (~) | 238 | Product of Array Except Self | Medium | `prefix-suffix` | RRS | 2026-08-27 |
 | ( ) | 347 | Top K Frequent Elements | Medium | `counting` | - | - |
 
 ### Week 2 - Two Pointers  (0/7)
@@ -177,6 +171,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 
 | Date | Problem | Outcome | Min | Notes |
 |---|---|---|---|---|
+| 2026-08-26 | Product of Array Except Self | solved | 15 | повтор с чистого листа после read: оба прохода воспроизвёл сам, 50->15 мин; l и running-под-две-роли не почистил |
 | 2026-08-26 | Group Anagrams | solved | 15 | повтор с чистого листа: вектор из 26 вспомнил сам, 36->15 мин; ord('a') и [0]*26 применил, if/else вокруг словаря опять не убрал |
 | 2026-08-25 | Valid Anagram | solved | 5 | повтор с чистого листа: сравнение словарей целиком вместо ручного обхода, вдвое быстрее (10->5 мин); if/else в счётчике вернулся |
 | 2026-08-25 | Two Sum | solved | 4 | повтор с чистого листа: else убран, имена чище (seen/dif); явный return [] так и не добавлен |

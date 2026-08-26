@@ -34,25 +34,27 @@ made you think "prefix-suffix" within 90 seconds?
 
 
 def product_except_self(nums: list[int]) -> list[int]:
+    l = len(nums)
     result = []
     running = 1
-    for num in nums:
+    for i in range(l):
         result.append(running)
-        running *= num
-    l = len(nums) - 1
+        running *= nums[i]
     running = 1
-    for i in range(l, -1, -1):
+    for i in range(l - 1, -1, -1):
         result[i] *= running
         running *= nums[i]
     return result
 
 
-# TODO с ревью:
-#   - переименовать l: односимвольное имя l путается с единицей, линтеры
-#     ловят его отдельным правилом (E741). Плюс переменная не нужна вовсе:
-#     for i in reversed(range(len(nums)))
-#   - running переиспользуется под две разные роли; prefix и suffix читались
-#     бы честнее — из имени было бы видно, какая половина сейчас набирается
+# TODO с ревью (повтор 2026-08-26 — второй проход воспроизведён без опоры
+# на подсказку, но чистка имён не сделана):
+#   - l всё ещё здесь и всё ещё путается с единицей (линтеры: E741).
+#     Оба цикла обходятся без неё:
+#       for num in nums                      — первый проход
+#       for i in reversed(range(len(nums)))  — второй
+#   - running под две разные роли: prefix в первом проходе, suffix во втором.
+#     Из имени должно быть видно, какая половина сейчас набирается
 #   - уметь объяснить, почему решение не ломается на нулях (там, где
 #     подход «перемножить всё и поделить» разваливается)
 
