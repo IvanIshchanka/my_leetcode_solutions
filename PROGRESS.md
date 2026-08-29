@@ -8,10 +8,10 @@
 ```
 Problems attempted : 5/85
 Mastered           : 0
-Total attempts     : 12  (2.5 h)
+Total attempts     : 13  (2.6 h)
 Cold-solve rate    : 60%  (solved unaided on first sight)
 Day streak         : 2
-Due today          : 3
+Due today          : 2
 
 Weakest patterns (by first-attempt outcome):
   prefix-suffix              0/1 cold  (hint 0, read 1)
@@ -22,7 +22,6 @@ Weakest patterns (by first-attempt outcome):
 
 Re-solve from a blank file. Do not re-read your old solution.
 
-- [ ] 1. Two Sum  `hash-map`
 - [ ] 217. Contains Duplicate  `hash-set`
 - [ ] 242. Valid Anagram  `counting`
 
@@ -34,7 +33,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 
 | | # | Problem | Difficulty | Pattern | Attempts | Next review |
 |---|---|---|---|---|---|---|
-| (~) | 1 | Two Sum | Easy | `hash-map` | SS | 2026-08-28 |
+| (~) | 1 | Two Sum | Easy | `hash-map` | SSS | 2026-09-05 |
 | (~) | 217 | Contains Duplicate | Easy | `hash-set` | SS | 2026-08-28 |
 | (~) | 242 | Valid Anagram | Easy | `counting` | SS | 2026-08-28 |
 | (~) | 49 | Group Anagrams | Medium | `hash-map` | HSS | 2026-09-01 |
@@ -179,6 +178,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 
 | Date | Problem | Outcome | Min | Notes |
 |---|---|---|---|---|
+| 2026-08-29 | Two Sum | solved | 5 | повтор: алгоритм чистый, но return i, seen[dif] отдаёт кортеж при аннотации List[int]; явного return [] по-прежнему нет |
 | 2026-08-29 | Group Anagrams | solved | 5 | повтор: 15->5 мин, имя словаря укоротилось; if/else вокруг словаря пятый раз подряд, defaultdict в руку так и не лёг |
 | 2026-08-28 | Product of Array Except Self | solved | 5 | повтор через 2 дня: 15->5 мин, l -> n, первый проход через for num in nums; running всё ещё под две роли |
 | 2026-08-26 | Product of Array Except Self | solved | 15 | повтор с чистого листа после read: оба прохода воспроизвёл сам, 50->15 мин; l и running-под-две-роли не почистил |
