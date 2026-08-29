@@ -6,23 +6,24 @@
 ## Summary
 
 ```
-Problems attempted : 5/85
+Problems attempted : 6/85
 Mastered           : 0
-Total attempts     : 15  (2.7 h)
-Cold-solve rate    : 60%  (solved unaided on first sight)
+Total attempts     : 16  (3.4 h)
+Cold-solve rate    : 50%  (solved unaided on first sight)
 Day streak         : 2
 Due today          : 0
 
 Weakest patterns (by first-attempt outcome):
   prefix-suffix              0/1 cold  (hint 0, read 1)
   hash-map                   1/2 cold  (hint 1, read 0)
+  counting                   1/2 cold  (hint 1, read 0)
 ```
 
 ## Curriculum
 
 `( )` not started  `(~)` in progress  `(x)` mastered
 
-### Week 1 - Complexity + Arrays & Hashing  (5/6)
+### Week 1 - Complexity + Arrays & Hashing  (6/6)
 
 | | # | Problem | Difficulty | Pattern | Attempts | Next review |
 |---|---|---|---|---|---|---|
@@ -31,7 +32,7 @@ Weakest patterns (by first-attempt outcome):
 | (~) | 242 | Valid Anagram | Easy | `counting` | SSS | 2026-09-05 |
 | (~) | 49 | Group Anagrams | Medium | `hash-map` | HSS | 2026-09-01 |
 | (~) | 238 | Product of Array Except Self | Medium | `prefix-suffix` | RSS | 2026-08-31 |
-| ( ) | 347 | Top K Frequent Elements | Medium | `counting` | - | - |
+| (~) | 347 | Top K Frequent Elements | Medium | `counting` | H | 2026-08-30 |
 
 ### Week 2 - Two Pointers  (0/7)
 
@@ -173,6 +174,7 @@ Weakest patterns (by first-attempt outcome):
 |---|---|---|---|---|
 | 2026-08-29 | Valid Anagram | solved | 2 | повтор: 5->2 мин, решение слово в слово то же (сравнение словарей); if/else в to_counter на месте |
 | 2026-08-29 | Two Sum | solved | 5 | повтор: алгоритм чистый, но return i, seen[dif] отдаёт кортеж при аннотации List[int]; явного return [] по-прежнему нет |
+| 2026-08-29 | Top K Frequent Elements | hint | 40 | счётчик увидел сразу, встал на 'как обойти сортировку'; дал паттерн bucket sort — частота как индекс. Ключ: нужен не полный порядок, а k верхних |
 | 2026-08-29 | Group Anagrams | solved | 5 | повтор: 15->5 мин, имя словаря укоротилось; if/else вокруг словаря пятый раз подряд, defaultdict в руку так и не лёг |
 | 2026-08-29 | Contains Duplicate | solved | 1 | повтор: 1:15, решение слово в слово то же; замечаний нет |
 | 2026-08-28 | Product of Array Except Self | solved | 5 | повтор через 2 дня: 15->5 мин, l -> n, первый проход через for num in nums; running всё ещё под две роли |
@@ -185,6 +187,5 @@ Weakest patterns (by first-attempt outcome):
 | 2026-08-23 | Group Anagrams | hint | 36 | 24 мин до рабочего (сортировка, O(n*k log k)), 36 до O(n*k) через вектор из 26. Время съел выбор ключа: str(dict) не канонический |
 | 2026-08-22 | Valid Anagram | solved | 10 | два ручных счётчика; проверку длин вынести в начало, .get(k,0)!=count вместо not-or; знать Counter(s)==Counter(t) |
 | 2026-08-22 | Two Sum | solved | 5 | hash-map на дополнение target-x; проверка до вставки. Причесать: лишний else, неявный return None, назвать complement |
-| 2026-08-22 | Contains Duplicate | solved | 2 | seen-set, ранний выход на первом повторе; знать однострочник len(set)!=len и его минус — нет раннего выхода |
 
 Attempt key: `S` solved unaided, `H` needed a hint, `R` read the solution.
