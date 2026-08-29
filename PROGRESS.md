@@ -8,21 +8,15 @@
 ```
 Problems attempted : 5/85
 Mastered           : 0
-Total attempts     : 14  (2.7 h)
+Total attempts     : 15  (2.7 h)
 Cold-solve rate    : 60%  (solved unaided on first sight)
 Day streak         : 2
-Due today          : 1
+Due today          : 0
 
 Weakest patterns (by first-attempt outcome):
   prefix-suffix              0/1 cold  (hint 0, read 1)
   hash-map                   1/2 cold  (hint 1, read 0)
 ```
-
-## Due for review
-
-Re-solve from a blank file. Do not re-read your old solution.
-
-- [ ] 217. Contains Duplicate  `hash-set`
 
 ## Curriculum
 
@@ -33,7 +27,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 | | # | Problem | Difficulty | Pattern | Attempts | Next review |
 |---|---|---|---|---|---|---|
 | (~) | 1 | Two Sum | Easy | `hash-map` | SSS | 2026-09-05 |
-| (~) | 217 | Contains Duplicate | Easy | `hash-set` | SS | 2026-08-28 |
+| (~) | 217 | Contains Duplicate | Easy | `hash-set` | SSS | 2026-09-05 |
 | (~) | 242 | Valid Anagram | Easy | `counting` | SSS | 2026-09-05 |
 | (~) | 49 | Group Anagrams | Medium | `hash-map` | HSS | 2026-09-01 |
 | (~) | 238 | Product of Array Except Self | Medium | `prefix-suffix` | RSS | 2026-08-31 |
@@ -180,6 +174,7 @@ Re-solve from a blank file. Do not re-read your old solution.
 | 2026-08-29 | Valid Anagram | solved | 2 | повтор: 5->2 мин, решение слово в слово то же (сравнение словарей); if/else в to_counter на месте |
 | 2026-08-29 | Two Sum | solved | 5 | повтор: алгоритм чистый, но return i, seen[dif] отдаёт кортеж при аннотации List[int]; явного return [] по-прежнему нет |
 | 2026-08-29 | Group Anagrams | solved | 5 | повтор: 15->5 мин, имя словаря укоротилось; if/else вокруг словаря пятый раз подряд, defaultdict в руку так и не лёг |
+| 2026-08-29 | Contains Duplicate | solved | 1 | повтор: 1:15, решение слово в слово то же; замечаний нет |
 | 2026-08-28 | Product of Array Except Self | solved | 5 | повтор через 2 дня: 15->5 мин, l -> n, первый проход через for num in nums; running всё ещё под две роли |
 | 2026-08-26 | Product of Array Except Self | solved | 15 | повтор с чистого листа после read: оба прохода воспроизвёл сам, 50->15 мин; l и running-под-две-роли не почистил |
 | 2026-08-26 | Group Anagrams | solved | 15 | повтор с чистого листа: вектор из 26 вспомнил сам, 36->15 мин; ord('a') и [0]*26 применил, if/else вокруг словаря опять не убрал |
