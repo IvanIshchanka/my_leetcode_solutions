@@ -36,28 +36,27 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
     start = ord("a")
 
     def to_alphabet_tuple(string):
-        alphabet_list = [0] * 26
+        result = [0] * 26
         for letter in string:
-            alphabet_list[ord(letter) - start] += 1
-        return tuple(alphabet_list)
+            result[ord(letter) - start] += 1
+        return tuple(result)
 
-    dict_with_alphabet_tuples_as_keys = dict()
-
+    result_dict = dict()
     for string in strs:
-        a_tuple = to_alphabet_tuple(string)
-        if a_tuple in dict_with_alphabet_tuples_as_keys:
-            dict_with_alphabet_tuples_as_keys[a_tuple].append(string)
+        current_tup = to_alphabet_tuple(string)
+        if current_tup in result_dict:
+            result_dict[current_tup].append(string)
         else:
-            dict_with_alphabet_tuples_as_keys[a_tuple] = [string]
+            result_dict[current_tup] = [string]
+    return list(result_dict.values())
 
-    return list(dict_with_alphabet_tuples_as_keys.values())
 
-
-# TODO с ревью (повтор 2026-08-26 — ord("a") вместо 97 и [0] * 26 на месте):
-#   - if/else вокруг словаря всё ещё здесь, четвёртый раз подряд:
-#     groups.setdefault(key, []).append(string)  или  defaultdict(list)
-#   - dict_with_alphabet_tuples_as_keys -> groups: имя описывает устройство,
-#     а не смысл; как называется ключ, и так видно строкой выше
+# TODO с ревью (повтор 2026-08-29 — 15 -> 5 мин, имя словаря укоротилось):
+#   - if/else вокруг словаря, пятый раз подряд. Целевая форма:
+#       groups = defaultdict(list)
+#       groups[key].append(string)
+#     Написать её осознанно с первой строчки, а не переписывать потом
+#   - result_dict -> groups: суффикс _dict повторяет тип, а не смысл
 #   - знать альтернативный ключ: tuple(sorted(string)) — короче, но
 #     O(k log k) на строку вместо O(k)
 
