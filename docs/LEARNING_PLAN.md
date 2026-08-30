@@ -214,25 +214,33 @@ four.** Reading about algorithms feels like progress and isn't — cap theory at
 
 | Source | Use it for |
 |---|---|
-| **[Tech Interview Handbook cheatsheets](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)** | *Start here every week.* One page per topic: the operations, their complexity, the techniques, the corner cases people miss. 15–20 min each. Pages live at `/algorithms/<topic>/` — [array](https://www.techinterviewhandbook.org/algorithms/array/), [hash-table](https://www.techinterviewhandbook.org/algorithms/hash-table/), [binary](https://www.techinterviewhandbook.org/algorithms/binary/) (binary search), [linked-list](https://www.techinterviewhandbook.org/algorithms/linked-list/), [stack](https://www.techinterviewhandbook.org/algorithms/stack/), [queue](https://www.techinterviewhandbook.org/algorithms/queue/), [tree](https://www.techinterviewhandbook.org/algorithms/tree/), [heap](https://www.techinterviewhandbook.org/algorithms/heap/), [recursion](https://www.techinterviewhandbook.org/algorithms/recursion/), [graph](https://www.techinterviewhandbook.org/algorithms/graph/), [interval](https://www.techinterviewhandbook.org/algorithms/interval/), [dynamic-programming](https://www.techinterviewhandbook.org/algorithms/dynamic-programming/), [matrix](https://www.techinterviewhandbook.org/algorithms/matrix/), [string](https://www.techinterviewhandbook.org/algorithms/string/), [sorting-searching](https://www.techinterviewhandbook.org/algorithms/sorting-searching/), [trie](https://www.techinterviewhandbook.org/algorithms/trie/), [math](https://www.techinterviewhandbook.org/algorithms/math/), [geometry](https://www.techinterviewhandbook.org/algorithms/geometry/) |
-| **[NeetCode: DSA for Beginners](https://neetcode.io/courses/dsa-for-beginners)** | The video version of the same material, in the same order as this curriculum. Use when the written page doesn't click. |
-| **[VisuAlgo](https://visualgo.net/en)** | Watch the structure *move*. Non-negotiable for heaps, BSTs, and graph traversal — these are the topics where a static explanation fails and an animation works. |
+| **[AlgoMaster DSA course](https://algomaster.io/learn/dsa/course-roadmap)** | *Start here every week.* One page per topic at `/learn/dsa/<topic>-introduction`: the idea, when it applies, the template, the complexity. 15-20 min each. |
+| **[AlgoMaster pattern list](https://algomaster.io/practice/dsa-patterns)** | Problems grouped by pattern. Use it for extra reps of the pattern you just learned, off-plan. |
+| **[AlgoMaster animations](https://algomaster.io/animations/dsa)** | Watch the structure *move*. Non-negotiable for heaps, BSTs and graph traversal - the topics where a static explanation fails and an animation works. |
+
+For framing rather than detail:
+[20 DSA patterns](https://blog.algomaster.io/p/20-dsa-patterns) ·
+[15 LeetCode patterns](https://blog.algomaster.io/p/15-leetcode-patterns)
 
 ### Per week
 
-| Wk | Topic | Read / watch |
+Verified links are direct. Where a row says *course roadmap*, the exact page
+gets looked up and pinned when that week comes up - better an honest pointer
+than a guessed URL.
+
+| Wk | Topic | Read |
 |---|---|---|
-| 1 | Complexity, Arrays & Hashing | [Big-O cheat sheet](https://www.bigocheatsheet.com/) · [Python time complexity](https://wiki.python.org/moin/TimeComplexity) · TIH [array](https://www.techinterviewhandbook.org/algorithms/array/) + [hash-table](https://www.techinterviewhandbook.org/algorithms/hash-table/) |
-| 2 | Two Pointers | TIH [array](https://www.techinterviewhandbook.org/algorithms/array/) + [string](https://www.techinterviewhandbook.org/algorithms/string/) · NeetCode two-pointers video |
-| 3 | Sliding Window | NeetCode sliding-window videos — the skeleton is easier seen than read |
-| 4 | Stack & Queue | TIH [stack](https://www.techinterviewhandbook.org/algorithms/stack/) + [queue](https://www.techinterviewhandbook.org/algorithms/queue/) · [`deque` docs](https://docs.python.org/3/library/collections.html#collections.deque) |
-| 5 | Binary Search | TIH [binary](https://www.techinterviewhandbook.org/algorithms/binary/) · [VisuAlgo sorting/searching](https://visualgo.net/en/sorting) · pick one template and stop reading |
-| 6 | Linked List | TIH [linked-list](https://www.techinterviewhandbook.org/algorithms/linked-list/) · [VisuAlgo list](https://visualgo.net/en/list) |
-| 7 | Trees & BST | TIH [tree](https://www.techinterviewhandbook.org/algorithms/tree/) + [recursion](https://www.techinterviewhandbook.org/algorithms/recursion/) · [VisuAlgo BST](https://visualgo.net/en/bst) · [Python Tutor](https://pythontutor.com/) to *watch* your recursion run |
-| 8 | Heaps & Backtracking | TIH [heap](https://www.techinterviewhandbook.org/algorithms/heap/) · [VisuAlgo heap](https://visualgo.net/en/heap) · [`heapq` docs](https://docs.python.org/3/library/heapq.html) |
-| 9 | Graphs | TIH [graph](https://www.techinterviewhandbook.org/algorithms/graph/) · [USACO Guide: graph traversal](https://usaco.guide/silver/graph-traversal) · [VisuAlgo graph traversal](https://visualgo.net/en/dfsbfs) |
-| 10 | 1-D DP | [freeCodeCamp DP course](https://www.youtube.com/watch?v=oBt53YbR9Kk) (Alvin Zablan, ~5 h) — **the single best DP explanation available.** Worth the whole week's theory budget |
-| 11 | Greedy, Intervals, 2-D DP | TIH [interval](https://www.techinterviewhandbook.org/algorithms/interval/) + [dynamic-programming](https://www.techinterviewhandbook.org/algorithms/dynamic-programming/) · second half of the DP course above |
+| 1 | Complexity, Arrays & Hashing | [arrays](https://algomaster.io/learn/dsa/arrays-introduction) · [Python time complexity](https://wiki.python.org/moin/TimeComplexity) |
+| 2 | Two Pointers | [two pointers](https://algomaster.io/learn/dsa/two-pointers-introduction) |
+| 3 | Sliding Window | [sliding window](https://algomaster.io/learn/dsa/sliding-window-introduction) |
+| 4 | Stack & Queue | course roadmap - stacks & queues · [`deque` docs](https://docs.python.org/3/library/collections.html#collections.deque) |
+| 5 | Binary Search | [binary search](https://algomaster.io/learn/dsa/binary-search-introduction) - pick one template and stop reading |
+| 6 | Linked List | [fast & slow pointers](https://algomaster.io/learn/dsa/fast-slow-pointers-introduction) |
+| 7 | Trees & BST | course roadmap - trees & BST · [Python Tutor](https://pythontutor.com/) to *watch* your recursion run |
+| 8 | Heaps & Backtracking | course roadmap - heaps, backtracking · [`heapq` docs](https://docs.python.org/3/library/heapq.html) |
+| 9 | Graphs | course roadmap - graphs, BFS & DFS |
+| 10 | 1-D DP | course roadmap - dynamic programming · [freeCodeCamp DP course](https://www.youtube.com/watch?v=oBt53YbR9Kk) (Alvin Zablan, ~5 h) as the long-form backup |
+| 11 | Greedy, Intervals, 2-D DP | course roadmap - greedy, intervals, DP |
 | 12 | Consolidation | Nothing new. Re-read only your own notes and `Trigger` lines |
 
 ### When you want the real thing
